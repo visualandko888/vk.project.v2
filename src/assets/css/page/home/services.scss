@@ -58,25 +58,30 @@
       box-sizing: border-box;
 
       >img {
-        margin-top: 30px;
-        width: 102.377px;
+        // margin-top: 30px;
+        margin: 1vh;
+        width: 27vw;
       }
 
       >h3 {
-        font-size: 2em;
-        margin-top: 1rem;
+        // font-size: 2em;
+        font-size: 8vw;
+        // margin-top: 1rem;
+        margin-top: 0rem;
         font-weight: bold;
         margin-bottom: 0rem;
       }
 
       >h4 {
-        font-size: 1.5em;
-        margin-top: 0.2rem;
+        // font-size: 1.5em;
+        font-size: 7vw;
+        margin: 3vh;
       }
 
       >p {
-        padding: 1rem 2rem;
-        margin: 1rem;
+        padding: 1rem 1rem;
+        // margin: 1rem;
+        margin: 0rem;
         line-height: 140%;
         font-size: 1.1em;
         font-weight: bold;
@@ -89,6 +94,7 @@
         text-decoration: none;
         color: #000;
         font-size: 1.1em;
+        margin-top: 2vh;
 
         >img {
           width: 3rem;
