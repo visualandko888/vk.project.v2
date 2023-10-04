@@ -88,7 +88,7 @@ export default function RealisationsSlider() {
         }
         setClassArr(prepArr);
       })
-      .catch(() => { });
+      .catch(() => {});
   }, []);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   useEffect(() => {
@@ -173,7 +173,8 @@ export default function RealisationsSlider() {
               >
                 <h2>
                   <img src={arrow_right} alt="fleche" />
-                  {' '}Voir la réalisation
+                  {' '}
+                  Voir la réalisation
                 </h2>
               </Link>
               <div className="task">

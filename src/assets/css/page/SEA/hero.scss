@@ -34,7 +34,7 @@
     min-height: 850px;
   }
 
-  >h1 {
+  > h1 {
     font-size: 2em;
 
     @include media-min("custom1") {
@@ -42,7 +42,7 @@
     }
   }
 
-  >p {
+  > p {
     &:first-of-type {
       font-style: italic;
       font-size: 1.5em;
@@ -74,7 +74,7 @@
       }
     }
 
-    >span {
+    > span {
       font-family: "Sedgwick Ave" !important;
     }
   }

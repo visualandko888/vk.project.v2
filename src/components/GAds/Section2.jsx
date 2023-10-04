@@ -37,9 +37,9 @@ export default function Section2() {
             {t('gads_section2_t2', { defaultValue: 'Puissance de Google Ads' })}
           </span>
           {' '}
-          {(windowSize > 415 && windowSize <600) ? <br /> :  ' '}
+          {windowSize > 415 && windowSize < 600 ? <br /> : ' '}
           {t('gads_section2_t3', { defaultValue: 'avec' })}
-          {windowSize > 700 ? <br /> :  ' '}
+          {windowSize > 700 ? <br /> : ' '}
           {t('gads_section2_t4', { defaultValue: 'un site web optimisé' })}
         </h2>
         <h3>

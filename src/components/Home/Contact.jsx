@@ -1,6 +1,7 @@
 import logoPrimary from '@assets/images/logo-primary.svg';
-import '@assets/css/page/home/contact.scss';
-import ContactForm from '@components/Elements/ContactForm';
+// import '@assets/css/page/home/contact.scss';
+import '@assets/css/page/home/contact2.scss';
+import ContactForm from '@components/Elements/ContactForm2';
 import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
