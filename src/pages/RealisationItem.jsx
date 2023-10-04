@@ -7,6 +7,7 @@ import '@assets/css/page/realisation/presentation.scss';
 import '@assets/css/page/realisation/overview2.scss';
 import ProjectsSlider from '@components/Home/RealisationsSlider';
 import HelmetMeta from '@components/Helmet/HelmetMeta';
+import Contact from '@components/Home/Contact';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useTranslation } from 'react-i18next';
@@ -136,6 +137,7 @@ export default function RealisationItem() {
           </div>
         </section>
       ))}
+      <Contact />
       <ProjectsSlider />
     </main>
   );

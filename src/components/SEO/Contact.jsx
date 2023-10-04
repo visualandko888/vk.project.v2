@@ -1,4 +1,4 @@
-import ContactForm from '@components/Elements/ContactForm';
+import ContactForm from '@components/Elements/ContactForm2';
 import { useTranslation } from 'react-i18next';
 
 export default function Contact() {

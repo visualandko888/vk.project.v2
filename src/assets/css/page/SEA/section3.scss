@@ -51,7 +51,7 @@
         color: #fff;
         padding: 0.2rem 0.3rem;
         display: inline-block;
-        
+
         @include media-min("tablet-up") {
           padding: 0.5rem 0.8rem;
         }
