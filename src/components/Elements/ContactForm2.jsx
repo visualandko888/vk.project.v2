@@ -12,7 +12,7 @@ import phoneImg from '@assets/images/phone.svg';
 import share from '@assets/images/share.svg';
 import { Link } from 'react-router-dom';
 import logoPrimary from '@assets/images/logo.svg';
-import flecheDroite from '@assets/images/fleche-droite2.png';
+import flecheDroite from '@assets/images/fleche.svg';
 
 export default function ContactForm() {
   const { t } = useTranslation(); // Importation de la traduction
@@ -25,6 +25,7 @@ export default function ContactForm() {
     },
     {
       name: '<span>Développement</span> <br />Web',
+      publicName: 'e.Commerce',
       img: web,
       selected: false,
     },
@@ -124,7 +125,7 @@ export default function ContactForm() {
       .then(() => {
         setSendStep(2);
       })
-      .catch(() => {});
+      .catch(() => { });
   };
   return (
     <>
