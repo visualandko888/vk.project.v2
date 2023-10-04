@@ -25,6 +25,7 @@ export default function ContactForm() {
     },
     {
       name: '<span>Développement</span> <br />Web',
+      publicName: 'e.Commerce',
       img: web,
       selected: false,
     },
@@ -124,7 +125,7 @@ export default function ContactForm() {
       .then(() => {
         setSendStep(2);
       })
-      .catch(() => {});
+      .catch(() => { });
   };
   return (
     <>
