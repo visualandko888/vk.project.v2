@@ -40,7 +40,7 @@ export default function Section2() {
           </span>
           {' '}
           {t('sea_section2_t2', { defaultValue: 'sur moteurs' })}
-          {windowSize > 1485 ? <br /> :  ' '}
+          {windowSize > 1485 ? <br /> : ' '}
           {t('sea_section2_t3', { defaultValue: 'de recherche' })}
         </h2>
         <h3>

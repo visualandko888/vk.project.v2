@@ -34,7 +34,7 @@ export default function Section3() {
           {t('seo_section3_t1', {
             defaultValue: "Raisons Stratégiques derrière l'Optimisation",
           })}
-          {windowSize > 1485 ? <br /> :  ' '}
+          {windowSize > 1485 ? <br /> : ' '}
           {t('seo_section3_t2', { defaultValue: 'du' })}
           {' '}
           <span>

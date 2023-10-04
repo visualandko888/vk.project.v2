@@ -4,32 +4,31 @@
   @extend ._baseSection;
   width: 85vw;
   margin: auto;
-  min-height: 75rem;
+  // min-height: 75rem;
   padding: 0;
 
-  @include media-min("phone-down") {
-    min-height: 85rem;
-  }
+  // @include media-min("phone-down") {
+  //   min-height: 85rem;
+  // }
 
-  @include media-min("tablet-up") {
-    min-height: 90rem;
-  }
+  // @include media-min("tablet-up") {
+  //   min-height: 90rem;
+  // }
 
-  @include media-min("custom2") {
-    min-height: 60rem;
-  }
+  // @include media-min("custom2") {
+  //   min-height: 60rem;
+  // }
 
-  >.modalCard {
+  > .modalCard {
     &.type2 {
-      >.content {
-
-        >h3,
-        >h4,
-        >span {
+      > .content {
+        > h3,
+        > h4,
+        > span {
           color: #fff;
         }
 
-        >p {
+        > p {
           background-color: #fff;
           color: $primary-color;
         }
@@ -37,33 +36,32 @@
     }
 
     &.type1 {
-      >.content {
-
-        >h3,
-        >h4,
-        >span {
+      > .content {
+        > h3,
+        > h4,
+        > span {
           color: #474747;
         }
 
-        >p {
+        > p {
           background-color: $primary-color;
           color: #fff;
         }
       }
     }
 
-    >.content {
+    > .content {
       position: relative;
       padding: 0 1rem;
       box-sizing: border-box;
 
-      >img {
+      > img {
         // margin-top: 30px;
         margin: 1vh;
         width: 27vw;
       }
 
-      >h3 {
+      > h3 {
         // font-size: 2em;
         font-size: 8vw;
         // margin-top: 1rem;
@@ -72,13 +70,13 @@
         margin-bottom: 0rem;
       }
 
-      >h4 {
+      > h4 {
         // font-size: 1.5em;
         font-size: 7vw;
         margin: 3vh;
       }
 
-      >p {
+      > p {
         padding: 1rem 1rem;
         // margin: 1rem;
         margin: 0rem;
@@ -87,7 +85,7 @@
         font-weight: bold;
       }
 
-      >a {
+      > a {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -96,7 +94,7 @@
         font-size: 1.1em;
         margin-top: 2vh;
 
-        >img {
+        > img {
           width: 3rem;
         }
       }
@@ -115,12 +113,12 @@
     }
   }
 
-  >.columns {
+  > .columns {
     @include media-min("custom2") {
       display: flex;
     }
 
-    >.servicesList {
+    > .servicesList {
       display: flex;
       flex-wrap: wrap;
       width: 100%;
@@ -146,7 +144,7 @@
         column-gap: 4rem;
       }
 
-      >.card {
+      > .card {
         width: 40%;
         height: 7rem;
         flex-grow: 1;
@@ -171,13 +169,13 @@
 
         &:hover {
           @include media-min("tablet-up") {
-            >.flip-card-inner {
+            > .flip-card-inner {
               transform: rotateY(180deg);
             }
           }
         }
 
-        >.flip-card-inner {
+        > .flip-card-inner {
           position: relative;
           width: 100%;
           height: 100%;
@@ -191,9 +189,9 @@
           border-radius: 15px;
 
           &.bg-blue {
-            >.card-back {
-              >span {
-                >img {
+            > .card-back {
+              > span {
+                > img {
                   filter: invert(1);
                 }
               }
@@ -220,7 +218,7 @@
             }
           }
 
-          >.card-front {
+          > .card-front {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -229,7 +227,7 @@
               justify-content: space-around;
             }
 
-            >.serviceImg {
+            > .serviceImg {
               margin-top: 0;
               transform: scale(0.7);
 
@@ -243,8 +241,8 @@
               }
             }
 
-            >.serviceTitles {
-              >h3 {
+            > .serviceTitles {
+              > h3 {
                 text-align: center;
                 font-size: 0.8rem;
                 margin: 0;
@@ -261,7 +259,7 @@
                 }
               }
 
-              >p {
+              > p {
                 font-size: 1.1rem;
                 padding-left: 0.5rem;
                 padding-right: 0.5rem;
@@ -273,7 +271,7 @@
             }
           }
 
-          >.card-front,
+          > .card-front,
           .card-back {
             position: absolute;
             box-sizing: border-box;
@@ -283,10 +281,10 @@
             backface-visibility: hidden;
           }
 
-          >.card-back {
+          > .card-back {
             transform: rotateY(180deg);
 
-            >p {
+            > p {
               font-size: 1.2rem;
               position: absolute;
               top: 50%;
@@ -297,7 +295,7 @@
               margin: 0;
             }
 
-            >span {
+            > span {
               position: absolute;
               bottom: 1rem;
               right: 1rem;
@@ -305,7 +303,7 @@
               align-items: center;
               gap: 1rem;
 
-              >img {
+              > img {
                 width: 3rem;
               }
             }
@@ -314,7 +312,7 @@
       }
     }
 
-    >.income {
+    > .income {
       width: 100%;
       margin-top: 2.5rem;
       position: relative;
@@ -324,7 +322,7 @@
         margin-top: 0;
       }
 
-      >h3 {
+      > h3 {
         color: #474747;
         text-align: center;
         font-size: 1.25rem;
@@ -374,7 +372,7 @@
         }
       }
 
-      >.activities {
+      > .activities {
         list-style: none;
         text-align: left;
         font-size: 1rem;
@@ -385,7 +383,7 @@
           font-size: 1.25rem;
         }
 
-        >li {
+        > li {
           display: flex;
           align-items: center;
           margin-bottom: 0.6rem;
@@ -394,7 +392,7 @@
             margin-bottom: 2rem;
           }
 
-          >span {
+          > span {
             width: 100%;
           }
 
@@ -410,7 +408,7 @@
         }
       }
 
-      >.questions {
+      > .questions {
         font-family: Sedgwick Ave;
         font-size: 1.25rem;
         list-style: none;
@@ -424,7 +422,7 @@
           font-size: 1.75rem;
         }
 
-        >li {
+        > li {
           margin-bottom: 0.5rem;
 
           @include media-min("custom2") {
@@ -453,7 +451,7 @@
             left: 35%;
           }
 
-          >.service_to_form {
+          > .service_to_form {
             cursor: pointer;
           }
         }
@@ -461,7 +459,7 @@
     }
   }
 
-  >.infos-cards-mobile {
+  > .infos-cards-mobile {
     .black-screen {
       background-color: rgba(0, 0, 0, 0.3);
       z-index: 40;
@@ -524,12 +522,12 @@
       }
 
       .serviceTitles {
-        >h3 {
+        > h3 {
           font-size: 1.5rem;
           margin-bottom: 0;
         }
 
-        >p {
+        > p {
           font-size: 1.1rem;
           font-weight: bold;
         }

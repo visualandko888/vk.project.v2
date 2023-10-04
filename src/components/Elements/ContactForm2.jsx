@@ -2,7 +2,6 @@ import { instanceAxios } from '@helpers/axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import googleAds from '@assets/images/contact-google-ads.svg';
-import design from '@assets/images/contact-design.svg';
 import web from '@assets/images/contact-web.svg';
 import seo from '@assets/images/contact-seo.svg';
 import sea from '@assets/images/contact-sea.svg';
@@ -12,13 +11,20 @@ import { useTranslation } from 'react-i18next';
 import phoneImg from '@assets/images/phone.svg';
 import share from '@assets/images/share.svg';
 import { Link } from 'react-router-dom';
+import logoPrimary from '@assets/images/logo.svg';
+import flecheDroite from '@assets/images/fleche-droite2.png';
 
 export default function ContactForm() {
   const { t } = useTranslation(); // Importation de la traduction
-  const [servicesList, setServicesList] = useState([
+  const servicesList = [
     {
       name: '<span>Développement</span> <br />Web',
       publicName: 'Développement WEB',
+      img: web,
+      selected: false,
+    },
+    {
+      name: '<span>Développement</span> <br />Web',
       img: web,
       selected: false,
     },
@@ -30,20 +36,14 @@ export default function ContactForm() {
     },
     {
       name: 'SEO',
-      publicName: 'SEO',
+      publicName: 'Référencement naturel',
       img: seo,
       selected: false,
     },
     {
       name: 'SEA',
-      publicName: 'SEA',
+      publicName: 'Référencement payant',
       img: sea,
-      selected: false,
-    },
-    {
-      name: '<span>Web</span><br /> Design',
-      publicName: 'WEB Design',
-      img: design,
       selected: false,
     },
     {
@@ -52,7 +52,7 @@ export default function ContactForm() {
       img: security,
       selected: false,
     },
-  ]);
+  ];
 
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
@@ -63,12 +63,6 @@ export default function ContactForm() {
   const [description, setDescription] = useState('');
   const [pj, setPj] = useState(null);
   const [sendStep, setSendStep] = useState(0);
-
-  const handleClickChecked = (index) => {
-    const newArr = [...servicesList];
-    newArr[index].selected = !newArr[index].selected;
-    setServicesList(newArr);
-  };
 
   const [currentLabel, setCurrentLabel] = useState('');
 
@@ -105,7 +99,8 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setSendStep(1);
     let services = '';
     for (let i = 0; i < servicesList.length; i++) {
@@ -134,70 +129,101 @@ export default function ContactForm() {
   return (
     <>
       <div className="content">
-        {sendStep === 0 && (
-          <>
-            <div className="top">
-              {t('contact_form_t1', {
-                defaultValue: 'Vous désirez nous contacter pour :',
-              })}
+        <div className="left">
+          <img src={logoPrimary} alt="logo" />
+          <p>
+            {t('contact_form_t6', {
+              defaultValue:
+                'Décrivez nous votre projet afin que nous puissions répondre au mieux à votre demande et ce, dans les plus brefs délais',
+            })}
+          </p>
+          <img src={flecheDroite} alt="fleche" />
+        </div>
+        <div className="right">
+          {sendStep === 1 && (
+            <div className="sendStep">
+              <h3>
+                {t('contact_form_t3', {
+                  defaultValue: 'Envoi de votre message en cours...',
+                })}
+              </h3>
             </div>
-            <div className="servicesList">
-              {servicesList.map((e, index) => (
-                <div
-                  key={index}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={() => handleClickChecked(index)}
-                  onClick={() => handleClickChecked(index)}
-                  type="button"
-                  className={`item ${e.selected ? 'selected' : ''}`}
-                >
-                  <div className="top">
-                    <img alt="réalisation" src={e.img} />
-                  </div>
-                  <div
-                    className="bottom"
-                    dangerouslySetInnerHTML={{
-                      __html: t(`contact_form_service${index + 1}`, {
-                        defaultValue: e.name,
-                      }),
-                    }}
-                  />
-                </div>
-              ))}
+          )}
+
+          {sendStep === 2 && (
+            <div className="sendStep">
+              <h3>
+                {t('contact_form_t4', {
+                  defaultValue:
+                    'Votre message a bien été envoyé. Notre équipe reviendra vers vous dans les plus brefs délais !',
+                })}
+              </h3>
             </div>
-            <div className="form">
-              <div className="formContent">
+          )}
+          {sendStep === 0 && (
+            <form onSubmit={handleSubmit} method="post">
+              <h3>
+                {t('contact_form_t1', {
+                  defaultValue: 'Vous désirez nous contacter pour :',
+                })}
+              </h3>
+              <select name="service">
+                <option value="0">Séléctionner un service</option>
+                {servicesList.map((e, index) => (
+                  <option value={index}>
+                    {t(`contact_form_service_v2_${index + 1}`, {
+                      defaultValue: e.publicName,
+                    })}
+                  </option>
+                ))}
+              </select>
+              <div>
                 <input
                   onChange={(e) => handleChangeForm('lastname', e)}
                   type="text"
                   name="lastname"
+                  required
                   placeholder={t('contact_form_input1', {
-                    defaultValue: 'NOM',
+                    defaultValue: 'Nom',
                   })}
                 />
                 <input
                   onChange={(e) => handleChangeForm('firstname', e)}
                   type="text"
                   name="firstname"
+                  required
                   placeholder={t('contact_form_input2', {
                     defaultValue: 'Prénom',
                   })}
                 />
+              </div>
+              <div>
+                <input
+                  onChange={(e) => handleChangeForm('mail', e)}
+                  type="mail"
+                  name="mail"
+                  required
+                  placeholder={t('contact_form_input4', {
+                    defaultValue: 'Adresse Mail',
+                  })}
+                />
+                <input
+                  onChange={(e) => handleChangeForm('phone', e)}
+                  type="number"
+                  name="phone"
+                  required
+                  placeholder={t('contact_form_input6', {
+                    defaultValue: 'Téléphone',
+                  })}
+                />
+              </div>
+              <div>
                 <input
                   onChange={(e) => handleChangeForm('society', e)}
                   type="text"
                   name="society"
                   placeholder={t('contact_form_input3', {
                     defaultValue: 'Société',
-                  })}
-                />
-                <input
-                  onChange={(e) => handleChangeForm('mail', e)}
-                  type="mail"
-                  name="mail"
-                  placeholder={t('contact_form_input4', {
-                    defaultValue: 'Adresse Mail',
                   })}
                 />
                 <input
@@ -208,23 +234,17 @@ export default function ContactForm() {
                     defaultValue: 'Site internet',
                   })}
                 />
-                <input
-                  onChange={(e) => handleChangeForm('phone', e)}
-                  type="number"
-                  name="phone"
-                  placeholder={t('contact_form_input6', {
-                    defaultValue: 'Téléphone',
-                  })}
-                />
+              </div>
 
-                <textarea
-                  onChange={(e) => handleChangeForm('description', e)}
-                  name="description"
-                  placeholder={t('contact_form_input7', {
-                    defaultValue:
-                      'Un commentaire ou des questions sur votre projet ?',
-                  })}
-                />
+              <textarea
+                onChange={(e) => handleChangeForm('description', e)}
+                name="description"
+                placeholder={t('contact_form_input7', {
+                  defaultValue:
+                    'Un commentaire ou des questions sur votre projet ?',
+                })}
+              />
+              <div>
                 <label htmlFor="pj">
                   {currentLabel || (
                     <>
@@ -242,36 +262,15 @@ export default function ContactForm() {
                   name="pj"
                   accept=".jpg, .jpeg, .png, .doc, .docx, .pdf, .txt"
                 />
+                <button type="submit">
+                  {t('contact_form_t2', {
+                    defaultValue: 'Contactez notre équipe',
+                  })}
+                </button>
               </div>
-
-              <button onClick={() => handleSubmit()} type="button">
-                {t('contact_form_t2', {
-                  defaultValue: 'Contactez notre équipe',
-                })}
-              </button>
-            </div>
-          </>
-        )}
-        {sendStep === 1 && (
-          <div className="sendStep">
-            <h3>
-              {t('contact_form_t3', {
-                defaultValue: 'Envoi de votre message en cours...',
-              })}
-            </h3>
-          </div>
-        )}
-
-        {sendStep === 2 && (
-          <div className="sendStep">
-            <h3>
-              {t('contact_form_t4', {
-                defaultValue:
-                  'Votre message a bien été envoyé. Notre équipe reviendra vers vous dans les plus brefs délais !',
-              })}
-            </h3>
-          </div>
-        )}
+            </form>
+          )}
+        </div>
       </div>
       <div className="bottom">
         <p>

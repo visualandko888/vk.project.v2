@@ -178,40 +178,40 @@ export default function Services() {
           <ul className="activities">
             <li>
               <span>
-              {t('home_services_t4', {
-                defaultValue: 'Création de sites optimisés',
-              })}
+                {t('home_services_t4', {
+                  defaultValue: 'Création de sites optimisés',
+                })}
               </span>
             </li>
             <li>
               <span>
-              {t('home_services_t5', {
-                defaultValue: 'Génération de traffic sur votre site',
-              })}
+                {t('home_services_t5', {
+                  defaultValue: 'Génération de traffic sur votre site',
+                })}
               </span>
             </li>
             <li>
               <span>
-              {t('home_services_t6', {
-                defaultValue:
-                  'Création et gérance de campagnes publicitaires puissantes',
-              })}
+                {t('home_services_t6', {
+                  defaultValue:
+                    'Création et gérance de campagnes publicitaires puissantes',
+                })}
               </span>
             </li>
             <li>
               <span>
-              {t('home_services_t7', {
-                defaultValue:
-                  'Collecte, analyse et déploiement des données marketing',
-              })}
+                {t('home_services_t7', {
+                  defaultValue:
+                    'Collecte, analyse et déploiement des données marketing',
+                })}
               </span>
             </li>
             <li>
               <span>
-              {t('home_services_t8', {
-                defaultValue:
-                  'Amélioration du message de marque et la conversion',
-              })}
+                {t('home_services_t8', {
+                  defaultValue:
+                    'Amélioration du message de marque et la conversion',
+                })}
               </span>
             </li>
           </ul>
