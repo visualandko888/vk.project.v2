@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { instanceAxios } from '@helpers/axios';
 import '@assets/css/page/home/realisationSlider.scss';
@@ -16,6 +17,12 @@ export default function RealisationsSlider() {
   const [isHover, setIsHover] = useState(false);
   const [isClick, setIsClick] = useState(false);
   const [currentShow, setCurrentShow] = useState({});
+
+  const navigate = useNavigate();
+
+  const handleClickNavigate = (id) => {
+    navigate(`/realisation/${id}`)
+  }
 
   const handleHover = (type) => {
     setIsHover(type);
@@ -88,7 +95,7 @@ export default function RealisationsSlider() {
         }
         setClassArr(prepArr);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   useEffect(() => {
@@ -140,7 +147,7 @@ export default function RealisationsSlider() {
                 <div className="recto">
                   <img alt={`Réalisation ${index + 1}`} src={e.imgFront} />
                 </div>
-                <div className="verso">
+                <div onClick={() => handleClickNavigate(e.id)} className="verso">
                   <img alt={`Réalisation ${index + 1}`} src={e.imgBack} />
                   <div className="text">
                     <h2>{e.title}</h2>
