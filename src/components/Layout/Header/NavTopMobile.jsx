@@ -1,8 +1,7 @@
 import logo from '@assets/images/logo_blue.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
+import MenuFries from '@assets/images/menu-fries-right.svg'
 
 export default function NavTopMobile({ handleClickShowNavMobile }) {
   const navigate = useNavigate();
@@ -19,10 +18,9 @@ export default function NavTopMobile({ handleClickShowNavMobile }) {
           alt="logo"
         />
       </NavHashLink>
-      <FontAwesomeIcon
+      <img src={MenuFries}
         onClick={() => handleClickShowNavMobile(true)}
-        className="faIcon"
-        icon={faBars}
+        className="Icon"
       />
     </div>
   );

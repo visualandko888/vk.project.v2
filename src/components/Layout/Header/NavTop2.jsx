@@ -7,9 +7,10 @@ import royaumeUni from '@assets/images/country/royaume-uni.png';
 import { NavHashLink } from 'react-router-hash-link';
 import leftIcoCalendar from '@assets/images/left-ico-calendar.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarDay } from '@fortawesome/free-solid-svg-icons';
+import { faRightToBracket, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import MenuFries from '@assets/images/menu-fries-left.svg'
 
-export default function NavTop2({ handleHoverNav }) {
+export default function NavTop2({ handleHoverNav,handleHoverLeftNav}) {
   const { i18n } = useTranslation();
   const { t } = useTranslation(); // Importation de la traduction
   const navTopElements = [
@@ -21,7 +22,7 @@ export default function NavTop2({ handleHoverNav }) {
     },
     {
       name: 'Nos services',
-      url: '/home#services',
+      url: '',
       translate_var: 'nos-services',
       isButton: false,
     },
@@ -96,6 +97,10 @@ export default function NavTop2({ handleHoverNav }) {
     <div className="navTop2">
       <div className="left">
         <ul>
+          <img src={MenuFries}
+            onClick={() => handleHoverLeftNav(true)}
+            className="Icon"
+          />
           <NavHashLink to="/#">
             <img alt="logo" src={logo} />
           </NavHashLink>
@@ -103,7 +108,7 @@ export default function NavTop2({ handleHoverNav }) {
             <li
               role="button"
               tabIndex={0}
-              onClick={() => handleHoverNav(index)}
+              onClick={() => index === 1 &&  handleHoverLeftNav(true)}
               onKeyDown={() => handleHoverNav(index)}
               key={index}
               className={`${e.url === currentPage ? 'active' : null} ${
@@ -132,21 +137,26 @@ export default function NavTop2({ handleHoverNav }) {
               <img alt="instagram logo" src={instagramsvg} />
             </Link>
           </li> */}
-          <li
+          {/* <li
             role="button"
             tabIndex={0}
             onKeyDown={() => showCalendar()}
             onClick={() => showCalendar()}
             className="topCalendar"
           >
-            <Link to="/#">
+            <NavHashLink to="/#">
               <FontAwesomeIcon className="faIcon" icon={faCalendarDay} />
               <span>
                 {t('layout_navigation_prendre-rendez-vous', {
                   defaultValue: 'Prendre rendez-vous',
                 })}
               </span>
-            </Link>
+            </NavHashLink>
+          </li> */}
+          <li>
+          <NavHashLink to="/espace-client">
+            <FontAwesomeIcon className="faIcon" icon={faUserCircle} />
+          </NavHashLink>
           </li>
         </ul>
         <div

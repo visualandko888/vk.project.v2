@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -80,9 +80,9 @@ export default function Header({ setShowModal }) {
   return (
     <header className="header-top">
       <div className="top-responsive">
-        <Link to="/">
+        <NavHashLink to="/">
           <img alt="logo" src={logo} />
-        </Link>
+        </NavHashLink>
         <FontAwesomeIcon
           className="faIcon"
           onClick={() => setShowHeaderTopNav(true)}
@@ -93,9 +93,9 @@ export default function Header({ setShowModal }) {
         <div className="top">
           <div className="close">
             <div>
-              <Link to="/">
+              <NavHashLink to="/">
                 <img alt="logo" src={logoDark} />
-              </Link>
+              </NavHashLink>
               <h2>Navigation</h2>
             </div>
             <FontAwesomeIcon
@@ -108,9 +108,9 @@ export default function Header({ setShowModal }) {
             {navTopElements.map((e, index) => (
               <>
                 {index === navTopElements.length / 2 ? (
-                  <Link to="/">
+                  <NavHashLink to="/">
                     <img alt="logo" src={logo} />
-                  </Link>
+                  </NavHashLink>
                 ) : (
                   false
                 )}
@@ -156,7 +156,7 @@ export default function Header({ setShowModal }) {
                 onKeyDown={e.modal ? () => setShowModal(true) : null}
                 className={e.url === currentPage ? 'active' : null}
               >
-                <Link key={index} to={`${e.url}`}>
+                <NavHashLink key={index} to={`${e.url}`}>
                   <img
                     onMouseEnter={() => handleHoverLeftNav(true)}
                     className="faIcon"
@@ -164,7 +164,7 @@ export default function Header({ setShowModal }) {
                     src={e.icon}
                   />
                   {e.name}
-                </Link>
+                </NavHashLink>
               </li>
             ))}
           </ul>

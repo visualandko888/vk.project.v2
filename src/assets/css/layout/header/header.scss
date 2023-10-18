@@ -192,6 +192,11 @@ header {
           display: block;
           width: 11rem;
         }
+
+        .Icon {
+          width: 2rem;
+          cursor: pointer;
+        }
       }
     }
 
@@ -284,6 +289,11 @@ header {
             align-items: center;
             font-weight: bold;
 
+            > .faIcon {
+              font-size: 2.2rem;
+              color: $primary-color;
+            }
+
             > img {
               width: 30px;
             }
@@ -370,70 +380,98 @@ header {
       top: 50%;
       transform: translateY(-50%);
 
-      > li {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        width: fit-content;
-        background-color: transparent;
-        min-height: $faIconHeight;
-        padding: $faIconPadding 0;
+      > div {
+        > li {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          gap: 1.5rem;
+          width: fit-content;
+          background-color: transparent;
+          min-height: $faIconHeight;
+          padding: $faIconPadding 0;
 
-        &:hover {
-          background-color: darken($secondary-color, 10%);
-          cursor: pointer;
-        }
-
-        &.active {
           &:hover {
-            background-color: transparent;
+            background-color: darken($secondary-color, 10%);
+            cursor: pointer;
+          }
+
+          &.active {
+            &:hover {
+              background-color: transparent;
+            }
+
+            .faIcon {
+              color: $secondary-color;
+            }
+
+            a {
+              color: $secondary-color;
+            }
           }
 
           .faIcon {
-            color: $secondary-color;
+            width: $faIconwidth;
+            height: $faIconHeight;
+            padding: 0.7rem;
+            margin-left: $navLeft_size_max;
+            position: fixed;
+            color: #fff;
+            background-color: $primary-color;
+            left: -$navLeft_size_max;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+            &.br0 {
+              border-radius: 0 0.4rem 0 0;
+            }
+
+            &.br4 {
+              border-radius: 0 0 0.4rem 0;
+            }
           }
 
-          a {
-            color: $secondary-color;
+          .showIcon {
+            width: 1.5rem;
+          }
+
+          > a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            font-family: $primary-font;
+            text-decoration: none;
+            min-width: 261px;
+            transition: all linear 0.7s;
+            color: #fff;
+          }
+
+          > ul {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-left: -2rem;
+            list-style: none;
+
+            > li {
+
+              a {
+                color: white;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                text-align: center;
+                font-weight: bold;
+                font-family: $primary-font;
+                text-decoration: none;
+                transition: all linear 0.7s;
+              }
+            }
           }
         }
-
-        .faIcon {
-          width: $faIconwidth;
-          height: $faIconHeight;
-          padding: 0.7rem;
-          margin-left: $navLeft_size_max;
-          position: fixed;
-          color: #fff;
-          background-color: $primary-color;
-          left: -$navLeft_size_max;
-          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-
-          &.br0 {
-            border-radius: 0 0.4rem 0 0;
-          }
-
-          &.br4 {
-            border-radius: 0 0 0.4rem 0;
-          }
-        }
-
-        > a {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          text-align: center;
-          font-weight: bold;
-          font-size: 1.1em;
-          font-family: $primary-font;
-          text-decoration: none;
-          width: 100%;
-          min-width: 261px;
-          transition: all linear 0.7s;
-          color: #fff;
-        }
-      }
+    }
     }
   }
 
@@ -454,10 +492,10 @@ header {
       }
     }
 
-    > .faIcon {
+    > .Icon {
       color: #474747;
-      margin-right: 1.5rem;
-      font-size: 1.5em;
+      margin-right: 1rem;
+      width: 2rem;
       cursor: pointer;
     }
   }
@@ -727,7 +765,7 @@ header {
       background-color: $primary-color;
       height: 100vh;
       width: clamp(15rem, 80vw, 20rem);
-      top: 0.5rem;
+      top: 0;
       right: -50rem;
       z-index: 5;
       padding: 30px;

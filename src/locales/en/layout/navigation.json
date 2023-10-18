@@ -30,5 +30,8 @@
   "layout_navigation_seo": "SEO - Natural Referencing",
   "layout_navigation_sea": "SEA - Paid SEO",
   "layout_navigation_google-ads": "Google Ads",
-  "layout_navigation_prendre-rendez-vous": "Make an appointment"
+  "layout_navigation_prendre-rendez-vous": "Make an appointment",
+  "layout_navigation_web-design": "UX/UI/Web Design",
+  "layout_navigation_maintenance-securite": "Safety Maintenance",
+  "layout_navigation_web-site": "Web Site Creation"
 }
