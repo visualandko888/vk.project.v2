@@ -106,12 +106,12 @@ export default function NavMobile({ showNavMobile, setShowNavMobile }) {
           </ul>
         </div>
         <div className="preBottom">
-          <Link to="#">
+          <NavHashLink to="#">
             <div>Prendre rendez-vous</div>
-          </Link>
-          <Link to="/#contacts">
+          </NavHashLink>
+          <NavHashLink to="/#contacts">
             <div>Demander un devis</div>
-          </Link>
+          </NavHashLink>
         </div>
         <div className="bottom">
           <Link to="https://www.facebook.com/visulaandko">

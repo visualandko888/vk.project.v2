@@ -4,10 +4,23 @@ import NavTop2 from './Header/NavTop2';
 import NavLeft from './Header/NavLeft';
 import NavMobile from './Header/NavMobile';
 import NavTopMobile from './Header/NavTopMobile';
-import SubServices from './Header/SubServices';
 import NavBottomMobile from './Header/NavBottomMobile';
 
 export default function Header() {
+
+  const [showHeaderTopNavProgress, setShowHeaderTopNavProgress] = useState(false);
+  const [handleHoverShowNavLeft, setHandleHoverShowNavLeft] = useState(false);
+
+  const handleHoverLeftNav = (bool) => {
+    if (!showHeaderTopNavProgress) {
+      setShowHeaderTopNavProgress(true);
+      setHandleHoverShowNavLeft(bool);
+      setTimeout(() => {
+        setShowHeaderTopNavProgress(false);
+      }, '10');
+    }
+  };
+
   // Affichage du menu mobile
   const [showNavMobile, setShowNavMobile] = useState(false);
 
@@ -41,12 +54,9 @@ export default function Header() {
           <NavTop2
             handleHoverNav={handleHoverNav}
             currentNavHover={currentNavHover}
+            handleHoverLeftNav={handleHoverLeftNav}
           />
-          <SubServices
-            currentNavHover={currentNavHover}
-            setCurrentNavHover={setCurrentNavHover}
-          />
-          <NavLeft />
+          <NavLeft handleHoverLeftNav={handleHoverLeftNav} handleHoverShowNavLeft={handleHoverShowNavLeft}/>
         </>
       ) : (
         <>

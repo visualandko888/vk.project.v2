@@ -16,10 +16,11 @@
     }
 
     > h3 {
-      font-family: "Sedgwick Ave";
+      font-family: Montserrat;
       font-size: 1.25rem;
+      font-weight: 700;
+      font-style: italic;
       color: #000;
-      font-weight: 500;
 
       @include media-min("base") {
         font-size: 2em;
@@ -87,6 +88,7 @@
       > div {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 0.5rem;
 
         &:last-of-type {
@@ -94,7 +96,7 @@
         }
 
         > img {
-          width: 55px;
+          width: 30px;
 
           @include media-min("base") {
             width: 78px;
