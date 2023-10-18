@@ -1,8 +1,8 @@
 @import "@assets/css/_base.scss";
 
 .webHero {
-  background: url("@assets/images/hero-bg-resp.jpg") no-repeat;
-  background-color: #fff;
+  // background: url("@assets/images/hero-bg-resp.jpg") no-repeat;
+  // background-color: #eee;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -19,19 +19,21 @@
   box-sizing: border-box;
   z-index: 2;
   text-align: center;
+  background-repeat: no-repeat;
 
   @include media-min("phone-down") {
     min-height: 500px;
   }
 
   @include media-min("custom1") {
-    background: url("@assets/images/webhero.svg") no-repeat;
+    // background: url("@assets/images/webhero.svg") no-repeat;
     background-size: cover;
     background-position: bottom right;
     padding-left: 15rem;
     padding-top: 202px;
     text-align: left;
     min-height: 850px;
+    background-repeat: no-repeat;
   }
 
   > h1 {

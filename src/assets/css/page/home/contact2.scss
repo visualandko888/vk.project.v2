@@ -3,10 +3,14 @@
 .contact {
   @extend ._baseSection;
   padding: 0rem;
-  margin: 3rem;
+  margin: 3rem 0rem;
+
+  @include media-min("base") {
+    margin: 3rem;
+  }
 
   &.spec1 {
-    >h2 {
+    > h2 {
       font-size: 1.5rem;
       color: #474747;
       font-weight: bold;
@@ -16,7 +20,7 @@
       }
     }
 
-    >h3 {
+    > h3 {
       font-family: "Sedgwick Ave";
       font-size: 1.25rem;
       color: #000;
@@ -27,7 +31,7 @@
       }
     }
 
-    >p {
+    > p {
       font-size: 1.25rem;
       width: 95vw;
       margin: auto;
@@ -43,7 +47,7 @@
     }
   }
 
-  >h2 {
+  > h2 {
     font-size: 2.25em;
     display: flex;
     justify-content: center;
@@ -51,13 +55,13 @@
     gap: 0.5rem;
     margin-bottom: 1rem;
 
-    >img {
+    > img {
       width: 9rem;
     }
   }
 
-  >p {
-    >span {
+  > p {
+    > span {
       display: inline-block;
       background-color: $primary-color;
       color: #fff;
@@ -67,13 +71,13 @@
     }
   }
 
-  >.bottom {
-    >p {
-      font-family: "Sedgwick Ave" !important;
+  > .bottom {
+    > p {
+      font-family: "Montserrat" !important;
       font-size: 1.5em;
     }
 
-    >.contactInfos {
+    > .contactInfos {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -85,7 +89,7 @@
         gap: 3rem;
       }
 
-      >div {
+      > div {
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -94,7 +98,7 @@
           text-decoration: underline;
         }
 
-        >img {
+        > img {
           width: 55px;
 
           @include media-min("base") {
@@ -102,8 +106,8 @@
           }
         }
 
-        >span {
-          >a {
+        > span {
+          > a {
             font-size: 1.1em;
             font-weight: 700;
             text-decoration: none;
@@ -114,27 +118,30 @@
     }
   }
 
-  >.content {
+  > .content {
     margin: 2rem auto;
     padding: 1rem;
     gap: 3rem;
     border-radius: 1rem;
-    width: fit-content;
+    width: 90%;
     height: auto;
     background: rgb(2, 0, 36);
-    background: linear-gradient(90deg,
-        rgba($primary-color, 100%) 0%,
-        rgba($primary-color, 75%) 50%,
-        rgba($primary-color, 50%) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba($primary-color, 100%) 0%,
+      rgba($primary-color, 75%) 50%,
+      rgba($primary-color, 50%) 100%
+    );
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     @include media-min("custom4") {
       padding: 2rem;
+      width: fit-content;
     }
 
-    >.left {
+    > .left {
       width: 20rem;
       color: #fff;
       display: none;
@@ -143,7 +150,7 @@
         display: block;
       }
 
-      >img {
+      > img {
         width: 15rem;
 
         &:nth-of-type(2) {
@@ -157,9 +164,9 @@
       }
     }
 
-    >.right {
+    > .right {
       height: 100%;
-      width: fit-content;
+      width: 100%;
       min-height: 30rem;
       background-color: #eff0f2;
       position: relative;
@@ -169,10 +176,10 @@
       align-items: center;
       justify-content: center;
 
-      >.sendStep {
+      > .sendStep {
         max-width: 30rem;
 
-        >h3 {
+        > h3 {
           padding: 2rem;
           color: #6a6a6a;
         }
@@ -180,6 +187,7 @@
 
       @include media-min("custom4") {
         margin-left: 11rem;
+        width: fit-content;
       }
 
       &::before {
@@ -200,24 +208,24 @@
         }
       }
 
-      >form {
-        padding: 2rem;
+      > form {
+        padding: 1rem;
         box-sizing: border-box;
 
         @include media-min("custom4") {
           padding: 2rem 2rem 2rem 0;
         }
 
-        >h3 {
+        > h3 {
           font-size: 1.3em;
           color: #6a6a6a;
         }
 
-        >select {
+        > select {
           display: block;
         }
 
-        >div {
+        > div {
           margin-bottom: 1rem;
           display: flex;
           gap: 1rem;
@@ -233,7 +241,7 @@
             flex-direction: row;
           }
 
-          >button {
+          > button {
             background-color: #474747;
             padding: 1rem 2rem;
             font-size: 24px;
@@ -307,7 +315,7 @@
             cursor: pointer;
           }
 
-          >.faIcon {
+          > .faIcon {
             font-size: 1.5em;
           }
         }

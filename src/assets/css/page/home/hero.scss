@@ -1,7 +1,7 @@
 @import "@assets/css/_base.scss";
 
 .hero {
-  background: url("@assets/images/hero-bg-resp.jpg") no-repeat;
+  // background: url("@assets/images/hero-bg-resp.jpg") no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -15,11 +15,13 @@
   display: flex;
   align-items: center;
   padding-bottom: 0;
+  background-repeat: no-repeat;
 
   @include media-min("custom1") {
-    background: url("@assets/images/hero-bg.png") no-repeat;
+    // background: url("@assets/images/hero-bg.png") no-repeat;
     background-size: 80vw;
     background-position: bottom right;
+    background-repeat: no-repeat;
   }
 
   &.frame0 {

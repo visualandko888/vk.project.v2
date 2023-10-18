@@ -96,9 +96,9 @@ export default function NavTop2({ handleHoverNav }) {
     <div className="navTop2">
       <div className="left">
         <ul>
-          <Link to="/">
+          <NavHashLink to="/#">
             <img alt="logo" src={logo} />
-          </Link>
+          </NavHashLink>
           {navTopElements.map((e, index) => (
             <li
               role="button"

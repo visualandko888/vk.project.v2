@@ -10,22 +10,23 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import phoneImg from '@assets/images/phone.svg';
 import share from '@assets/images/share.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logoPrimary from '@assets/images/logo.svg';
 import flecheDroite from '@assets/images/fleche.svg';
 
 export default function ContactForm() {
   const { t } = useTranslation(); // Importation de la traduction
+  const navigate = useNavigate();
   const servicesList = [
     {
       name: '<span>Développement</span> <br />Web',
-      publicName: 'Développement WEB',
+      publicName: 'Site vitrine (présentation générale de votre entreprise)',
       img: web,
       selected: false,
     },
     {
       name: '<span>Développement</span> <br />Web',
-      publicName: 'e.Commerce',
+      publicName: 'E.commerce (site intégrant des systèmes de paiements)',
       img: web,
       selected: false,
     },
@@ -43,7 +44,7 @@ export default function ContactForm() {
     },
     {
       name: 'SEA',
-      publicName: 'Référencement payant',
+      publicName: 'Social ADS (fb ADS, Intagram ADS, Tik Tok ADS...)',
       img: sea,
       selected: false,
     },
@@ -123,9 +124,10 @@ export default function ContactForm() {
     instanceAxios()
       .post('post_contact.php', formData)
       .then(() => {
+        navigate('/confirmation-de-devis-2');
         setSendStep(2);
       })
-      .catch(() => { });
+      .catch(() => {});
   };
   return (
     <>

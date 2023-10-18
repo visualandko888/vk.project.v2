@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import '@assets/css/page/gads/section3.scss';
-import bgsc3 from '@assets/images/bgs3-googleads.png';
+import bgsc3 from '@assets/images/bgs3-sea.png';
 import plus from '@assets/images/plus.png';
 import moin from '@assets/images/moin.png';
 import { useTranslation } from 'react-i18next';
