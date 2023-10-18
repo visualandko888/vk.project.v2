@@ -154,7 +154,7 @@ export default function NavTop2({ handleHoverNav,handleHoverLeftNav}) {
             </NavHashLink>
           </li> */}
           <li>
-          <NavHashLink to="/espace-client">
+          <NavHashLink to="/espace-client/">
             <FontAwesomeIcon className="faIcon" icon={faUserCircle} />
           </NavHashLink>
           </li>
