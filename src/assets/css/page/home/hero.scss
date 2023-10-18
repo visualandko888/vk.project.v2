@@ -1,7 +1,7 @@
 @import "@assets/css/_base.scss";
 
 .hero {
-  background: url("@assets/images/hero-bg-resp.jpg") no-repeat;
+  // background: url("@assets/images/hero-bg-resp.jpg") no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -15,16 +15,18 @@
   display: flex;
   align-items: center;
   padding-bottom: 0;
+  background-repeat: no-repeat;
 
   @include media-min("custom1") {
-    background: url("@assets/images/hero-bg.png") no-repeat;
+    // background: url("@assets/images/hero-bg.png") no-repeat;
     background-size: 80vw;
     background-position: bottom right;
+    background-repeat: no-repeat;
   }
 
   &.frame0 {
-    >.left {
-      >.circle-1 {
+    > .left {
+      > .circle-1 {
         display: flex;
         top: 30%;
         left: 20%;
@@ -33,12 +35,12 @@
           rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
           rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
-        >.small {
+        > .small {
           font-size: 2em;
         }
       }
 
-      >.circle-2 {
+      > .circle-2 {
         animation: sl1 0.5s ease-in-out;
         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
           rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
@@ -46,20 +48,20 @@
         top: 70%;
         left: -30rem;
 
-        >.small {
+        > .small {
           font-size: 2em;
         }
       }
     }
 
-    >.right {
-      >.content {
-        >h2 {
+    > .right {
+      > .content {
+        > h2 {
           color: $primary-color;
         }
 
-        >a {
-          >button {
+        > a {
+          > button {
             background-color: $primary-color;
           }
         }
@@ -68,32 +70,32 @@
   }
 
   &.frame1 {
-    >.left {
-      >.circle-1 {
+    > .left {
+      > .circle-1 {
         animation: sl2 0.5s ease-in-out;
         top: 70%;
         left: -30rem;
 
-        >.small {
+        > .small {
           font-size: 2em;
         }
       }
 
-      >.circle-2 {
+      > .circle-2 {
         display: flex;
         top: 30%;
         left: 20%;
         animation: sd2 2s ease-in-out;
 
-        >.small {
+        > .small {
           font-size: 2em;
         }
       }
     }
 
-    >.right {
-      >.content {
-        >h2 {
+    > .right {
+      > .content {
+        > h2 {
           color: $primary-color;
 
           @include media-min("custom1") {
@@ -101,8 +103,8 @@
           }
         }
 
-        >a {
-          >button {
+        > a {
+          > button {
             background-color: $primary-color;
 
             @include media-min("custom1") {
@@ -114,7 +116,7 @@
     }
   }
 
-  >.left {
+  > .left {
     display: none;
     height: 100%;
     width: 70%;
@@ -124,7 +126,7 @@
       display: block;
     }
 
-    >.circle {
+    > .circle {
       width: 229px;
       height: 229px;
       border-radius: 100%;
@@ -133,7 +135,7 @@
       justify-content: center;
       position: absolute;
 
-      >p {
+      > p {
         font-size: 3.06em;
         font-weight: 700;
         text-align: center;
@@ -149,7 +151,7 @@
     }
   }
 
-  >.right {
+  > .right {
     display: flex;
     align-items: center;
     // background-color: rgba(0, 128, 0, 0.326);
@@ -163,14 +165,14 @@
       justify-content: flex-start;
     }
 
-    >.content {
-      >h1 {
+    > .content {
+      > h1 {
         font-size: 2em;
         font-weight: bold;
         text-align: center;
         line-height: 2.5rem;
 
-        >span {
+        > span {
           font-size: 0.66em;
         }
 
@@ -186,7 +188,7 @@
         }
       }
 
-      >h2 {
+      > h2 {
         color: $primary-color;
         background-color: rgb(255 255 255 / 87%);
         width: fit-content;
@@ -205,7 +207,7 @@
         }
       }
 
-      >div {
+      > div {
         font-family: "Sedgwick Ave" !important;
         font-size: 1.5em;
         font-weight: 400;
@@ -218,13 +220,13 @@
           text-align: left;
         }
 
-        >span {
+        > span {
           display: block;
         }
       }
 
-      >a {
-        >button {
+      > a {
+        > button {
           padding: 0.6rem clamp(1rem, 10vw, 3rem);
           font-size: 1.5em;
           background-color: #579eb0;
@@ -259,7 +261,7 @@
     }
   }
 
-  >.fixButton {
+  > .fixButton {
     display: none;
     position: absolute;
     bottom: 0;
@@ -273,33 +275,33 @@
       display: flex;
     }
 
-    >.left {
-      >ul {
+    > .left {
+      > ul {
         display: flex;
         align-items: center;
         gap: 0.8rem;
 
-        >li {
+        > li {
           list-style: none;
 
           &:nth-of-type(1) {
-            >a {
-              >img {
+            > a {
+              > img {
                 width: 3rem;
               }
             }
           }
 
           &:last-of-type {
-            >a {
-              >img {
+            > a {
+              > img {
                 margin-left: 0.2rem;
               }
             }
           }
 
-          >a {
-            >img {
+          > a {
+            > img {
               width: 2.6rem;
             }
           }

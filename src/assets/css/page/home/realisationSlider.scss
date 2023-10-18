@@ -4,33 +4,35 @@
   @extend ._baseSection;
   padding: 3rem 0;
   background: $primary-color;
-  background: linear-gradient(90deg,
-      $primary-color,
-      rgba(255, 255, 255, 1) 45%,
-      rgba(255, 255, 255, 1) 55%,
-      $primary-color );
+  background: linear-gradient(
+    90deg,
+    $primary-color,
+    rgba(255, 255, 255, 1) 45%,
+    rgba(255, 255, 255, 1) 55%,
+    $primary-color
+  );
   min-height: clamp(200px, 80vw, 680px);
   box-sizing: border-box;
 
-  >.slider {
+  > .slider {
     position: relative;
     overflow: hidden;
     padding: 5% 0;
 
-    >.content {
+    > .content {
       position: relative;
       width: clamp(0rem, 65vw, 35rem);
       height: clamp(0rem, 41.14vw, 22.15rem);
       margin: auto;
 
-      >.modalCard {
-        >.content {
-          >img {
+      > .modalCard {
+        > .content {
+          > img {
             width: 100%;
             height: auto;
           }
 
-          >.task {
+          > .task {
             background-color: #f0f0f0;
             padding: 0.5rem;
           }
@@ -38,7 +40,7 @@
           a {
             text-decoration: none;
 
-            >h2 {
+            > h2 {
               margin-top: 1rem;
               display: flex;
               justify-content: center;
@@ -47,25 +49,26 @@
               color: #000;
               gap: 0.5rem;
 
-              >img {
+              > img {
                 width: 2.5rem;
               }
             }
           }
         }
 
-        &.show {}
+        &.show {
+        }
 
         &.unshow {
-          >.content {
-            >.faIcon {
+          > .content {
+            > .faIcon {
               display: none;
             }
           }
         }
       }
 
-      >.card {
+      > .card {
         opacity: 0;
         position: absolute;
         height: 0px;
@@ -107,7 +110,7 @@
               width: 142%;
               height: 142%;
 
-              >.cardInner {
+              > .cardInner {
                 transform: rotateY(180deg);
                 width: 100%;
                 height: 100%;
@@ -136,7 +139,7 @@
           margin-top: -7%;
         }
 
-        >.cardInner {
+        > .cardInner {
           position: relative;
           width: 100%;
           height: 100%;
@@ -147,21 +150,21 @@
             rgba(0, 0, 0, 0.23) 0px 6px 6px;
           border-radius: 0.5rem;
 
-          >.recto {
+          > .recto {
             position: absolute;
             width: 100%;
             height: 100%;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
 
-            >img {
+            > img {
               width: 100%;
               height: 100%;
               border-radius: 0.5rem;
             }
           }
 
-          >.verso {
+          > .verso {
             cursor: pointer;
             position: absolute;
             width: 100%;
@@ -170,13 +173,13 @@
             backface-visibility: hidden;
             transform: rotateY(180deg);
 
-            >img {
+            > img {
               width: 100%;
               height: 100%;
               border-radius: 0.5rem;
             }
 
-            >.text {
+            > .text {
               padding: 1rem;
               position: absolute;
               top: 0;
@@ -185,13 +188,13 @@
               height: -webkit-fill-available;
               border-radius: 0 0.5rem 0.5rem 0;
 
-              >a {
+              > a {
                 text-decoration: none;
                 position: absolute;
                 bottom: 1rem;
                 right: 1rem;
 
-                >span {
+                > span {
                   display: flex;
                   justify-content: center;
                   align-items: center;
@@ -199,7 +202,7 @@
                   color: #000;
                   gap: 0.5rem;
 
-                  >img {
+                  > img {
                     width: 2.5rem;
                   }
                 }
@@ -210,7 +213,7 @@
       }
     }
 
-    >.left {
+    > .left {
       width: 28.5%;
       height: 100%;
       position: absolute;
@@ -227,7 +230,7 @@
         display: flex;
       }
 
-      >img {
+      > img {
         transform: rotate(180deg);
         width: 5rem;
         transition: all 0.4s linear;
@@ -235,7 +238,7 @@
       }
     }
 
-    >.right {
+    > .right {
       width: 28.5%;
       height: 100%;
       position: absolute;
@@ -252,7 +255,7 @@
         display: flex;
       }
 
-      >img {
+      > img {
         width: 5rem;
         transition: all 0.4s linear;
       }

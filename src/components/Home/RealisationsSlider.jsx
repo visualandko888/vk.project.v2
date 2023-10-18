@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 import { instanceAxios } from '@helpers/axios';
 import '@assets/css/page/home/realisationSlider.scss';
 import { useTranslation } from 'react-i18next';
@@ -21,8 +21,8 @@ export default function RealisationsSlider() {
   const navigate = useNavigate();
 
   const handleClickNavigate = (id) => {
-    navigate(`/realisation/${id}`)
-  }
+    navigate(`/realisation/${id}`);
+  };
 
   const handleHover = (type) => {
     setIsHover(type);
@@ -95,7 +95,7 @@ export default function RealisationsSlider() {
         }
         setClassArr(prepArr);
       })
-      .catch(() => { });
+      .catch(() => {});
   }, []);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   useEffect(() => {
@@ -147,20 +147,26 @@ export default function RealisationsSlider() {
                 <div className="recto">
                   <img alt={`Réalisation ${index + 1}`} src={e.imgFront} />
                 </div>
-                <div onClick={() => handleClickNavigate(e.id)} className="verso">
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={() => handleClickNavigate(e.id)}
+                  onClick={() => handleClickNavigate(e.id)}
+                  className="verso"
+                >
                   <img alt={`Réalisation ${index + 1}`} src={e.imgBack} />
                   <div className="text">
                     <h2>{e.title}</h2>
                     {e.task.map((elem, i) => (
                       <p key={i}>{elem}</p>
                     ))}
-                    <Link to={`/realisation/${e.id}`}>
+                    <NavHashLink to={`/realisation/${e.id}#`}>
                       <span>
                         <img src={arrow_right} alt="fleche" />
                         {' '}
                         En savoir plus
                       </span>
-                    </Link>
+                    </NavHashLink>
                   </div>
                 </div>
                 <div className="resp" />
@@ -174,16 +180,16 @@ export default function RealisationsSlider() {
               classes={`type1 ${isClick ? 'show' : 'unshow'}`}
             >
               <img alt="réalisation" src={currentShow.imgBack} />
-              <Link
+              <NavHashLink
                 onClick={() => handleClick(false, 0)}
-                to={`/realisation/${currentShow.id}`}
+                to={`/realisation/${currentShow.id}#`}
               >
                 <h2>
                   <img src={arrow_right} alt="fleche" />
                   {' '}
                   Voir la réalisation
                 </h2>
-              </Link>
+              </NavHashLink>
               <div className="task">
                 {currentShow.task
                   && currentShow.task.map((e, index) => <p key={index}>{e}</p>)}

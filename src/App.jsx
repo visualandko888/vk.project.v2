@@ -5,6 +5,8 @@ import WebDeveloppement from '@pages/WebDeveloppement';
 import GAds from '@pages/GAds';
 import SEA from '@pages/SEA';
 import SEO from '@pages/SEO';
+import GoogleAnalyst from '@components/Elements/googleAnalyst';
+import FormConfirmation from '@pages/FormConfirmation';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import BlogId from './pages/BlogId';
@@ -16,6 +18,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Layout>
+          <GoogleAnalyst />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
@@ -26,6 +29,10 @@ function App() {
             <Route path="/blog/:id" element={<BlogId />} />
             <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
             <Route path="/realisation/:id" element={<RealisationItem />} />
+            <Route
+              path="/confirmation-de-devis-2"
+              element={<FormConfirmation />}
+            />
             <Route path="/404" element={<Page404 />} />
             <Route path="*" element={<Page404 />} />
           </Routes>

@@ -1,6 +1,6 @@
 import logo from '@assets/images/logo.svg';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 
 export default function SubServices({ currentNavHover, setCurrentNavHover }) {
   const handleBackClick = () => {
@@ -32,55 +32,64 @@ export default function SubServices({ currentNavHover, setCurrentNavHover }) {
 
         <ul>
           <li>
-            <Link to="/developpement-web">
+            <NavHashLink onClick={handleBackClick} to="/developpement-web">
               {t('layout_navigation_developpement-web', {
                 defaultValue: 'Développement Web',
               })}
-            </Link>
+            </NavHashLink>
             <ul>
               <li>
-                <Link to="/developpement-web#creation">
+                <NavHashLink
+                  onClick={handleBackClick}
+                  to="/developpement-web#creation"
+                >
                   {t('layout_navigation_creation-de-site', {
                     defaultValue: 'Création de site',
                   })}
-                </Link>
+                </NavHashLink>
               </li>
               <li>
-                <Link to="/developpement-web#uwui">
+                <NavHashLink
+                  onClick={handleBackClick}
+                  to="/developpement-web#uxui"
+                >
                   {t('layout_navigation_ux', {
                     defaultValue: 'UX / UI / Web Design',
                   })}
-                </Link>
+                </NavHashLink>
               </li>
               <li>
-                <Link to="/developpement-web#maintenance">
+                <NavHashLink
+                  onClick={handleBackClick}
+                  to="/developpement-web#maintenance"
+                >
                   {t('layout_navigation_maintenance-et-securite', {
                     defaultValue: 'Maintenance et sécurité',
                   })}
-                </Link>
+                </NavHashLink>
               </li>
             </ul>
           </li>
           <li>
-            <Link to="/referencement-naturel">
+            <NavHashLink onClick={handleBackClick} to="/referencement-naturel">
               {t('layout_navigation_seo', {
                 defaultValue: 'SEO - Référencement Naturel',
               })}
-            </Link>
+            </NavHashLink>
           </li>
           <li>
-            <Link to="/referencement-payant">
+            <NavHashLink onClick={handleBackClick} to="/referencement-payant">
               {t('layout_navigation_sea', {
                 defaultValue: 'SEA - Référencement Payant',
               })}
-            </Link>
+            </NavHashLink>
           </li>
           <li>
-            <Link to="google-ads">
+            <NavHashLink onClick={handleBackClick} to="google-ads">
               {t('layout_navigation_google-ads', {
                 defaultValue: 'Google Ads',
               })}
-            </Link>
+            </NavHashLink>
           </li>
         </ul>
       </div>

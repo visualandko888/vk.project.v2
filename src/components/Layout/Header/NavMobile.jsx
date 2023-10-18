@@ -22,23 +22,34 @@ export default function NavMobile({ showNavMobile, setShowNavMobile }) {
       translate_var: 'nos-services',
     },
     {
+      name: 'Développement Web',
+      href: '/developpement-web',
+      classes: 'small',
+      translate_var: 'developpement-web',
+    },
+    {
+      name: 'SEO - Référencement Naturel',
+      href: '/referencement-naturel',
+      classes: 'small',
+      translate_var: 'seo',
+    },
+    {
+      name: 'SEA - Référencement Payant',
+      href: '/referencement-payant',
+      classes: 'small',
+      translate_var: 'sea',
+    },
+    {
+      name: 'Google Ads',
+      href: '/google-ads',
+      classes: 'small',
+      translate_var: 'google-ads',
+    },
+    {
       name: 'Nos Projets',
       href: '/#projects',
       classes: '',
       translate_var: 'nos-projets',
-    },
-    {
-      name: 'Demander un devis',
-      href: '/#contacts',
-      classes: 'small',
-      translate_var: 'demander-un-devis',
-    },
-    {
-      name: 'Prendre rendez-vous',
-      href: '#',
-      classes: 'small',
-      isCalendar: true,
-      translate_var: 'prendre-rendez-vous',
     },
   ];
   const showCalendar = () => {
@@ -94,11 +105,19 @@ export default function NavMobile({ showNavMobile, setShowNavMobile }) {
             ))}
           </ul>
         </div>
+        <div className="preBottom">
+          <Link to="#">
+            <div>Prendre rendez-vous</div>
+          </Link>
+          <Link to="/#contacts">
+            <div>Demander un devis</div>
+          </Link>
+        </div>
         <div className="bottom">
-          <Link to="ttps://www.facebook.com/visulaandko">
+          <Link to="https://www.facebook.com/visulaandko">
             <img src={facebook} alt="facebook" />
           </Link>
-          <Link to="ttps://www.instagram.com/visualandko/">
+          <Link to="https://www.instagram.com/visualandko/">
             <img src={instagram} alt="instagram" />
           </Link>
         </div>
