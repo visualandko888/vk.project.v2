@@ -20,13 +20,13 @@ export default function ContactForm() {
   const servicesList = [
     {
       name: '<span>Développement</span> <br />Web',
-      publicName: 'Site vitrine (présentation générale de votre entreprise)',
+      publicName: 'Site vitrine',
       img: web,
       selected: false,
     },
     {
       name: '<span>Développement</span> <br />Web',
-      publicName: 'E.commerce (site intégrant des systèmes de paiements)',
+      publicName: 'E.commerce',
       img: web,
       selected: false,
     },
@@ -44,7 +44,7 @@ export default function ContactForm() {
     },
     {
       name: 'SEA',
-      publicName: 'Social ADS (fb ADS, Intagram ADS, Tik Tok ADS...)',
+      publicName: 'Social ADS',
       img: sea,
       selected: false,
     },
