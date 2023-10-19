@@ -1,9 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { NavHashLink } from 'react-router-hash-link';
-import { Link } from 'react-router-dom';
-import facebook from '@assets/images/facebook-w.svg';
-import instagram from '@assets/images/instagram-w.svg';
 import { useTranslation } from 'react-i18next';
 
 export default function NavMobile({ showNavMobile, setShowNavMobile }) {
@@ -78,6 +75,11 @@ export default function NavMobile({ showNavMobile, setShowNavMobile }) {
         </div>
         <div className="middle">
           <ul>
+            <li>
+              <a href="/espace-client/login">
+                <FontAwesomeIcon className="faIcon" icon={faUserCircle} />
+              </a>
+            </li>
             {navArr.map((e) => (
               <li
                 role="button"
@@ -107,19 +109,11 @@ export default function NavMobile({ showNavMobile, setShowNavMobile }) {
         </div>
         <div className="preBottom">
           <NavHashLink to="#">
-            <div>Prendre rendez-vous</div>
+            <div onKeyDown={() => showCalendar()} onClick={() => showCalendar()}>Prendre rendez-vous</div>
           </NavHashLink>
-          <NavHashLink to="/#contacts">
-            <div>Demander un devis</div>
+          <NavHashLink to="/home#contact">
+            <div onClick={() => setShowNavMobile(false)}>Demander un devis</div>
           </NavHashLink>
-        </div>
-        <div className="bottom">
-          <Link to="https://www.facebook.com/visulaandko">
-            <img src={facebook} alt="facebook" />
-          </Link>
-          <Link to="https://www.instagram.com/visualandko/">
-            <img src={instagram} alt="instagram" />
-          </Link>
         </div>
       </div>
     </div>
