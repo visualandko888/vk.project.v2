@@ -770,6 +770,7 @@ header {
       z-index: 5;
       padding: 30px;
       box-sizing: border-box;
+      overflow-y: scroll;
 
       > .top {
         display: flex;
@@ -826,7 +827,7 @@ header {
       }
 
       > .middle {
-        margin-top: 46px;
+        margin-top: -10px;
 
         > ul {
           width: 100%;
@@ -842,6 +843,10 @@ header {
               text-align: center;
               display: block;
               font-weight: bold;
+
+              > .faIcon {
+                font-size: 2.5rem;
+              }
             }
 
             &.small {
